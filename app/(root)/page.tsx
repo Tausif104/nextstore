@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-
-export default function Home() {
-  return <h1>Nextstore</h1>
+const HomePage = () => {
+  return <h1>Next Store</h1>
 }
+
+export default HomePage

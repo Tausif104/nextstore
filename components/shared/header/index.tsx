@@ -1,8 +1,8 @@
-import { ShoppingBagIcon, User } from 'lucide-react'
-import Image from 'next/image'
+import { ShoppingBagIcon, User, Store } from 'lucide-react'
 import Link from 'next/link'
 import { APP_NAME } from '@/lib/constants'
 import { Button } from '@/components/ui/button'
+import ModeToggle from './mode-toggle'
 
 const Header = () => {
   return (
@@ -10,20 +10,15 @@ const Header = () => {
       <div className='container mx-auto flex justify-between items-center'>
         <div className='flex-start'>
           <Link className='flex items-center' href='/'>
-            <Image
-              src='/images/logo.svg'
-              width={48}
-              height={48}
-              alt={`${APP_NAME} Logo`}
-              priority={true}
-            />
+            <Store strokeWidth={1} size={30} />
             <span className='hidden lg:block font-bold text-2xl ml-3'>
               {APP_NAME}
             </span>
           </Link>
         </div>
 
-        <div className='space-x-2'>
+        <div className='space-x-2 flex items-center'>
+          <ModeToggle />
           <Button asChild variant='ghost'>
             <Link href='/cart'>
               <ShoppingBagIcon /> Cart
